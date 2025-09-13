@@ -1,37 +1,66 @@
-# artpack - 0.1.0
+# artpack 0.2.0
+<!-- CRAN release: 2025-09-xx 🎉🤸🏾‍♀️-->
+### **New Functions and Updates**
+* Added `point_in_polygon()`. Performs geometric spatial analyses using [{sf} package](https://r-spatial.github.io/sf/) functionality. Useful for detecting if coordinate points lay inside, on the boundary, or outside of a supplied polygon.
+* Improved select back-end test suites for performance
+* Corrections and alt-text added to code/images in artpack's vignettes
+* The [{sf} package](https://r-spatial.github.io/sf/) is now imported with the installation of artpack
+* Other back-end quality of life additions
 
-* Initial CRAN Release
-* Improved testing suite for `grid_maker()`
-* Overhauled `grid_maker()` with improved logic testing and handling for inputs
-* Created helper function `group_numbers()` for export.
-* Cleaned up package organization and admin files.
-* Added `circle_data()` function.
+# artpack 0.1.9
+### **New Functions and Updates**
+* Added `set_brightness()`
+* Added `set_saturation()`
+* Updated input checks for various functions
+* Updated back end operations for `grid_maker()`
+* Added vignette "[Connecting artpack Assets to ggplot2 Geoms](https://meghansaha.github.io/artpack/articles/geom_chart.html)"
 
+# artpack 0.1.8
+### **New Functions and Updates**
+* Updated `art_pals()`'s "ocean" palette.
+* Added 'Experimental' lifecycle badges to `packer()` and `wave_data()`.
+* Added the ["See aRtpack in Action"](https://meghansaha.github.io/artpack/articles/see_artpack_in_action.html) vignette.
+* Added alt-text to site image and alt text in code chunks where applicable.
 
-# artpack - 0.0.0.9005
+# artpack 0.1.7
+### **New Functions and Updates**
+* Added `resizer()`.
+* Added more internal utility helper functions.
+* Improved test suite for internal utility helper functions.
 
-* Improved testing suite for `wave_data()`
-* Overhauled `wave_data()` with improved logic testing and handling for inputs
-* Restyled package to follow Tidyverse Style Guidelines via the styler package.
+# artpack 0.1.6
+### **New Functions and Updates**
+* Added `randomize` argument to `art_pals()` which allows for the palette order to be sampled.
+* Streamlined test suites for `art_pals()`.
+* Small copy-paste corrections.
 
-# artpack - 0.0.0.9004
+# artpack 0.1.5
+### **New Functions and Updates**
+* Added `seq_bounce()`.
+* Added more internal utility helper functions.
+* Improved test suite for internal utility helper functions.
+* Regenerated pkgdown favicons.
+* Rectified unknown global variables.
+* Added subtitles to the package index (reference) page.
 
-* Improved testing suite for `square_data()`
-* Overhauled `square_data()` with improved logic testing and handling for inputs
-* Renamed old "circle_packer()" function to `packer()`
-* Restyled package to follow Tidyverse Style Guidelines via the styler package.
+# artpack 0.1.4
+### **New Functions and Updates**
+* Added test suite for internal utility helper functions.
 
-# artpack - 0.0.0.9003
+# artpack 0.1.3
+### **New Functions and Updates**
+* Added the `prefix`, `suffix`, and `sep` arguments to `group_numbers()`.
 
-* Improved testing suite for `circle_packer()`
-* Overhauled `circle_packer()` with improved logic testing and handling for inputs
+# artpack 0.1.2.9000
+### **New Functions and Updates**
+* Added `group_slice()` which allows slicing of data frames and tibbles by a group variable.
 
-# artpack  - 0.0.0.9002
+# artpack 0.1.2
+### **New Functions and Updates**
+* Added `group_sample()` which allows sampling of data frames and tibbles by a group variable.
+* Increased minimum required version of R in `DESCRIPTION` to `R (>= 4.1.0)`.
+* Corrected `circle_data()` help documentation.
 
-* Improved testing suite for `rotator()`
-* Overhauled `rotator()` to handle data masking and dataframe preservation
+# artpack 0.1.0
 
-# artpack - 0.0.0.9001
-
-* Improved testing suite for `art_pals()`
-* Added the `super` palette for use in `art_pals()`
+* Initial Release on CRAN

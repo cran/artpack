@@ -1,0 +1,19 @@
+citHeader("To cite artpack in publications, please use:")
+
+
+bibentry(
+  bibtype     = "Manual",
+  key         = "artpack",
+  author      = c(person("Meghan S.", "Harris")),
+  title       = "Creates Generative Art Data",
+  note = "version 0.1.0",
+  year = "2023",
+  url = "https://meghansaha.github.io/artpack/",
+  textVersion  = paste("Harris, M. S. (2023).",
+  "artpack: Creates Generative Art Data.",
+  "version 0.1.0",
+  "https://github.com/Meghansaha/artpack"
+  )
+)
+
+

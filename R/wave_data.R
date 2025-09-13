@@ -1,6 +1,8 @@
 #' Data Generation for 2D Sine and Cosine Waves
 #'
 #' @description
+#' `r lifecycle::badge("experimental")`
+#'
 #' A tool for making data frames filled with data that displays sine or cosine waves when graphed.
 #'
 #'
@@ -221,32 +223,12 @@ wave_data <- function(start,
 
   # Checking for valid colors
   if (!is.null(color)) {
-    color_check <- is.color(color)
-
-    if (!color_check) {
-      c(
-        paste("{.var color} is", error("invalid")),
-        "x" = paste("{.var color} must be a valid:", status("`r` color from `colors()`"), "or a valid 6 digit", status("hexadecimal webcolor")),
-        "i" = paste("{.var {color}} is an", callout("invalid color"))
-      ) |>
-        cli::cli_abort()
-    }
+    is.color(color)
   }
 
   if (!is.null(fill)) {
-    fill_check <- is.color(fill)
-
-    if (!fill_check) {
-      c(
-        paste("{.var fill} is", error("invalid")),
-        "x" = paste("{.var fill} must be a valid:", status("`r` color from `colors()`"), "or a valid 6 digit", status("hexadecimal webcolor")),
-        "i" = paste("{.var {fill}} is an", callout("invalid color"))
-      ) |>
-        cli::cli_abort()
-    }
+    is.color(fill)
   }
-
-
   # Logic Catches#
   if (!is.logical(group_var)) {
     c(

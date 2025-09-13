@@ -1,5 +1,6 @@
 #' Data Generation for Circle Packing
 #' @description
+#' `r lifecycle::badge("experimental")`
 #'
 #' A tool for creating a data frame of values that create a circle packing design when plotted.
 #' When the default `circle_type` "whole" is used, the output should mapped with `geom_polygon`
@@ -45,6 +46,13 @@ packer <- function(n, min_x = 0, max_x = 100, min_y = 0, max_y = 100,
                    big_r = 5, med_r = 3, small_r = 1,
                    color_pal = NULL, color_type = "regular",
                    circle_type = "whole") {
+  # ===========================================================================#
+  # Global Variable Handling----------------------------------------------------
+  # ===========================================================================#
+  # Establish these for use later in the workflow
+  .y <- NULL
+  group <- NULL
+
   # ===========================================================================#
   # Logic Checks---------------------------------------------------------------
   # ===========================================================================#
@@ -234,19 +242,8 @@ packer <- function(n, min_x = 0, max_x = 100, min_y = 0, max_y = 100,
   }
 
   # Checks for valid color palettes
-  if (!is.null(color_pal)) {
-    color_check <- any(!is.color(color_pal))
-
-    if (color_check) {
-      invalid_colors <- names(is.color(color_pal)[is.color(color_pal) == FALSE])
-
-      c(
-        paste("{.var color_pal} contains", error("invalid colors")),
-        "x" = paste("{.var color_pal} must contain valid:", status("`r` colors from `colors()`"), "or", status("hexadecimal webcolors")),
-        "i" = paste("{knitr::combine_words(invalid_colors, before = '\"', after ='\"' )}", ifelse(length(invalid_colors) > 1, "are", "is"), callout("invalid colors"))
-      ) |>
-        cli::cli_abort()
-    }
+  for (i in color_pal){
+    is.color(i)
   }
 
   # ===========================================================================#
